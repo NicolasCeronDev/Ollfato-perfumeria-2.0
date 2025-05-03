@@ -1,0 +1,376 @@
+*{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Estilos generales del producto */
+.abrir-carrito-btn{
+    border: none;
+}
+
+/* Estilos de las opciones globales */
+.opciones-globales-carrito {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(10px); /* O un valor similar para la posición inicial */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, top 0.3s ease-out, left 0.3s ease-out;
+}
+
+.opciones-globales-carrito h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.opciones-globales-carrito label {
+    margin-bottom: 5px;
+}
+
+.selector-cantidad-global {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.selector-cantidad-global button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 3px;
+}
+
+.selector-cantidad-global input[type="number"] {
+    width: 50px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.precio-producto-global {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.opciones-globales-carrito button.agregar-al-carrito-global {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.opciones-globales-carrito select#color-global {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%; /* Para que ocupe el ancho del contenedor */
+    box-sizing: border-box; /* Para que el padding no aumente el ancho */
+}
+
+.opciones-globales-carrito .cerrar-opciones {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.opciones-globales-carrito .cerrar-opciones:hover {
+    color: #000;
+}
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .opciones-globales-carrito {
+        width: 50%; /* Ocupa casi todo el ancho */
+        max-width: none; /* Elimina el ancho máximo si lo tuvieras */
+        left: 5%; /* Centrado horizontalmente */
+        top: 50%; /* Centrado verticalmente (aproximado) */
+        transform: translate(-50%, -50%); /* Centrado vertical y horizontal preciso */
+        padding: 15px;
+        font-size: 0.9em; /* Reducir un poco el tamaño de la fuente */
+        align-items: stretch; /* Estirar los elementos para ocupar el ancho */
+    }
+
+    .opciones-globales-carrito h3 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+
+    .opciones-globales-carrito label {
+        display: block; /* Cada label en una línea */
+        margin-bottom: 8px;
+    }
+
+    .selector-cantidad-global {
+        margin-bottom: 10px;
+    }
+
+    .selector-cantidad-global button {
+        padding: 6px 10px;
+        margin: 0 3px;
+    }
+
+    .selector-cantidad-global input[type="number"] {
+        width: 40px;
+        padding: 6px;
+    }
+
+    .opciones-globales-carrito select#color-global {
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+
+    .opciones-globales-carrito button.agregar-al-carrito-global {
+        padding: 8px 15px;
+        font-size: 0.95em;
+        margin-top: 10px;
+    }
+
+    .carrito-lateral {
+        width: 80%; /* Ocupa un buen porcentaje del ancho */
+        max-width: 300px; /* Limitar el ancho máximo en móviles grandes */
+    }
+
+    .carrito-lateral h2 {
+        font-size: 1.3em;
+    }
+
+    .carrito-items {
+        font-size: 0.9em;
+    }
+
+    .carrito-lateral button.finalizar-compra {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+}
+
+/* Estilos para pantallas medianas (tabletas pequeñas) - Opcional */
+@media (min-width: 601px) and (max-width: 900px) {
+    .opciones-globales-carrito {
+        width: 70%;
+        left: 15%;
+    }
+
+    .carrito-lateral {
+        width: 50%;
+        max-width: 400px;
+    }
+}
+/**/
+
+/* Estilos del carrito lateral */
+.carrito-lateral {
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    right: -30%;
+    width: 20%;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-left: 2px solid #ccc;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 2%;
+    box-sizing: border-box;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex; /* Añadimos flexbox al contenedor del carrito */
+    flex-direction: column; /* Alineamos los elementos verticalmente */
+}
+
+.carrito-lateral.abierto {
+    right: 0;
+}
+
+.carrito-lateral h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #000000;
+    margin: 10px;
+    position: relative;
+    /* Para posicionar el pseudo-elemento */
+    display: inline-block;
+    /* Para que el ancho del h2 se ajuste al contenido */
+    padding-bottom: 10px;
+    /* Espacio entre el texto y la línea */
+}
+
+.carrito-lateral h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    /* Ajusta el ancho según lo necesites */
+    height: 2px;
+    /* Grosor de la línea */
+    background-color: #c19629;
+    /* Color de la línea */
+    margin: 10px auto;
+    /* Centra la línea debajo del texto */
+    position: absolute;
+    /* Posiciona la línea */
+    left: 50%;
+    /* Posiciona a la mitad */
+    transform: translateX(-50%);
+    /* Centra la línea horizontalmente */
+}
+
+/* Pantallas más pequeñas (móviles) */
+@media (max-width: 600px) {
+    .carrito-lateral {
+        width: 80%; /* Ocupar un mayor porcentaje de la pantalla */
+        max-width: 400px; /* Establecer un ancho máximo en móviles más grandes */
+        right: -80%; /* Ocultar inicialmente */
+    }
+
+    .carrito-lateral.abierto {
+        right: 0;
+    }
+}
+
+/* Tablets y pantallas medianas */
+@media (min-width: 601px) and (max-width: 992px) {
+    .carrito-lateral {
+        width: 50%; /* Ocupar la mitad de la pantalla en tablets */
+        max-width: 500px;
+        right: -50%; /* Ocultar inicialmente */
+    }
+
+    .carrito-lateral.abierto {
+        right: 0;
+    }
+}
+
+
+
+.carrito-items {
+    margin-bottom: 20px;
+    flex-grow: 1; /* Permite que la lista de items crezca para ocupar el espacio disponible */
+}
+
+/*Detalles de los productos, se manejan desde js*/
+.carrito-item {
+    margin-bottom: ;
+    padding: 0px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column; /* Mostrar la información hacia abajo */
+    align-items: flex-start; /* Alinear los elementos a la izquierda */
+}
+
+.carrito-item .item-imagen {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Recortar si la imagen es más grande */
+    border-radius: 5px;
+}
+
+.carrito-item .item-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carrito-item .item-nombre {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.carrito-item .item-detalle {
+    margin-bottom: 3px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.carrito-item .item-precio {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #000;
+}
+
+.carrito-item button.eliminar-item {
+    margin-top: 10px;
+    align-self: flex-end; /* Alinear el botón a la derecha */
+}
+
+.carrito-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.carrito-item button:hover {
+    background-color: #c19629;
+}
+
+.finalizar-compra{
+    background-color: #c19629;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Aumentamos un poco el padding para mejor apariencia */
+    cursor: pointer;
+    border-radius: 50px; /* Ajustamos el radio del borde */
+    font-size: 1em; /* Ajustamos el tamaño de la fuente */
+    width: 80%; /* Ocupa un buen ancho del carrito */
+    margin-left: auto;
+    margin-right: auto; /* Centra horizontalmente el botón */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.finalizar-compra:hover {
+    background-color: hsl(43, 65%, 46%, 0.9);
+}
+
+/**/
+
+.carrito-lateral .cerrar-carrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.carrito-lateral .cerrar-carrito:hover {
+    color: #000;
+}
+
+.carrito-subtotal {
+    padding-top: 30px;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+}

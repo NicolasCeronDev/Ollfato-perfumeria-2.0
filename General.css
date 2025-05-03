@@ -1,0 +1,670 @@
+/*Archivo para estilos generales de toda la web...*/
+
+* {
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    /* Asegurar que no haya márgenes predeterminados en el body */
+}
+
+.Header {
+    width: 100%;
+    /* El header ocupa todo el ancho */
+    height: auto;
+    /* La altura se ajusta al contenido */
+}
+.navbar {
+    background-color: rgb(255, 251, 251);
+    display: flex;
+    border: #0000008e 2px solid;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    max-width: 800px;
+    position: fixed; /* Cambiamos a fixed para que se quede en su lugar inicial al bajar */
+    top: -20px; /* Mantenemos el top inicial */
+    border-radius: 50px;
+    padding: 8px 15px;
+    margin-top: 50px;
+    z-index: 20;
+    font-weight: 600;
+    transition: transform 0.1s ease-in-out; /* Agregamos transición para la animación */
+}
+
+
+/* Clase para el navbar fijo */
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%);
+    margin-top: 0;
+}
+
+/* Clase para ocultar el navbar */
+.navbar.oculto {
+    transform: translateY(-100%);
+}
+
+.logo {}
+
+.navbar>div>ul {
+    /* Estilo para la lista dentro del div */
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar>div>ul>li {
+    margin: 0 10px;
+    /* Espacio entre los elementos del menú */
+}
+
+.navbar a.bar {
+    color: #000000;
+    padding: 8px 10px;
+    display: block;
+}
+
+.navbar a.bar::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #c19629;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar li.active a {
+    font-weight: bolder;
+}
+
+.navbar li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    /* Altura de la línea */
+    background-color: #c19629;
+    /* Color de la línea */
+    width: 100%;
+    /* Ancho de la línea */
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    /* Espacio entre el texto y la línea */
+    transform: scaleX(0);
+    /* Inicialmente oculta */
+    transition: transform 0.3s ease;
+    /* Transición suave */
+}
+
+.navbar>div>ul>li:hover a.bar::after,
+.navbar>div>ul>li.active a.bar::after {
+    transform: scaleX(1);
+}
+
+.bar {
+    display: inline-block;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease background-color, 0.3s ease color, 0.3s ease transform;
+}
+
+.bar:hover {
+    color: #c19629;
+    transform: scale(1.1);
+}
+
+/* Media Query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        /* Cambiar a disposición horizontal */
+        align-items: center;
+        width: 95%;
+        padding: 10px;
+        border-radius: 40px;
+        top: 10px;
+        overflow-x: auto;
+        /* Permitir el desplazamiento horizontal */
+        -webkit-overflow-scrolling: touch;
+        /* Para un desplazamiento suave en iOS */
+        justify-content: flex-start;
+        /* Alinear los elementos al inicio */
+    }
+
+    .Logo {
+        margin-right: 20px;
+        /* Espacio entre el logo y el menú */
+    }
+
+    .navbar>div>ul {
+        display: flex;
+        flex-direction: row;
+        /* Los elementos de la lista en fila */
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar>div>ul>li {
+        margin: 0 15px;
+        /* Espacio entre los elementos del menú */
+    }
+
+
+    .Botones {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .btn {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .Logo img {
+        width: 50px;
+    }
+
+ 
+}
+
+/* Media Query para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Titulo_1 {
+        font-size: 2.2em;
+    }
+
+    .texto_1 {
+        font-size: 1em;
+        margin: 30px;
+    }
+
+    .navbar>div>ul>li {
+        margin: 0 15px;
+    }
+
+    .Logo img {
+        width: 80px;
+    }
+
+}
+
+/*Carrito para la pagina web*/
+.agregaralcarrito img {
+    cursor: pointer;
+    height: 27px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.agregaralcarrito img:hover {
+    transform: scale(1.2);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos para el ícono de WhatsApp (Modificado para ser alargado) */
+.Asesoria {
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    background: linear-gradient(90deg, #42ff0e, #005b05);
+    /* Cambiar el gradiente a horizontal */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    border-radius: 50px;
+    /* Bordes más redondeados para el óvalo */
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 15px;
+    /* Añadir padding horizontal */
+    display: flex;
+    /* Usar flex para alinear icono y texto */
+    align-items: center;
+    /* Alinear verticalmente */
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    /* Eliminar el subrayado del enlace */
+}
+
+.whatsapp-icon img {
+    width: 30px;
+    /* Reducir un poco el tamaño del icono */
+    height: 30px;
+    margin-right: 10px;
+    /* Espacio entre el icono y el texto */
+}
+
+.pppWhatsapp {
+    margin: 0;
+}
+
+.pppWhatsapp a {
+    color: white !important;
+    /* Establecer el color del texto blanco y forzar la aplicación */
+    text-decoration: none;
+    /* Asegurar que no haya subrayado */
+}
+
+.pppWhatsapp p {
+    margin: 0;
+    font-size: 0.9em;
+    /* Ajustar tamaño de la fuente del texto */
+    line-height: 1.2;
+    white-space: nowrap;
+    /* Evitar que el texto se rompa en varias líneas */
+}
+
+.pppWhatsapp h4 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.pppWhatsapp h6 {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+.Asesoria:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos del botón */
+.flechaArriba {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flechaArriba img {
+    width: 40px;
+    height: 40px;
+}
+
+.flechaArriba:hover {
+    transform: scale(0.95);
+    /* Efecto de escala al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Pie de pagina*/
+footer {
+    background-color: #000000;
+    padding: 20px;
+    color: #fff;
+}
+
+.alineacion {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.policies-section,
+.social-icons,
+.copyright,
+.contact-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Estilos de los íconos de redes sociales */
+.social-icons {
+    display: grid;
+    gap: 0px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    margin: 0px 25px 40px 5px;
+    transition: 0.3s ease background-color, 0.3s ease color, 0.3s ease transform;
+    transition: background 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    /* Color destacado */
+}
+
+footer p,
+ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul,
+li {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.cart-section {
+    background: #b68b1f;
+    /* Color dorado similar al de la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin-top: auto;
+    border-radius: 0;
+    /* Bordes cuadrados */
+}
+
+.cart-section .agregaralcarrito {
+    border-left: .1rem solid #fff7;
+    border-right: .1rem solid #fff7;
+    width: 100%;
+}
+
+/* Icono de corazón */
+.vista-rapida-btn {
+    padding: 10px ;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #b68b1f;
+    border: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+
+.vista-rapida-btn:hover {
+    background: rgba(255, 255, 255, 0.436) ;
+    transform: scale(1.1);
+    color: #000000;
+    border-radius: 25px;
+}
+
+.heart-icon {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.heart-icon i {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+/* Cambia el color del corazón al pasar el cursor */
+.heart-icon:hover i {
+    color: #ff4d4d;
+    /* Rojo */
+}
+
+.agregaralcarrito {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Cambia el color del botón al pasar el cursor */
+.agregaralcarrito:hover {
+    background: rgba(255, 255, 255, 0.425);
+    color: #000000;
+    border-radius: 15px;
+    /* Rosa claro */
+
+}
+
+/* Estilos de los derechos de autor */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #ccc;
+    padding-top: 30px;
+    width: 100%;
+    /* Ocupa todo el ancho */
+    border-top: solid rgba(255, 255, 255, 0.219) 1px;
+    position: relative;
+}
+
+/*--------------------------------------------*/
+/* Estilos para el fondo oscuro del modal */
+/* Estilos para el fondo oscuro del modal */
+.modal-fondo {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Cubre toda la ventana */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* Estilos para el contenedor del modal */
+.modal-vista-rapida {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 80%; /* Ajusta el ancho según necesites */
+    max-width: 800px; /* Ancho máximo */
+    position: relative; /* Para posicionar el botón de cerrar */
+}
+
+.modal-contenido {
+    display: flex; /* Activa el flexbox para la disposición en fila */
+    gap: 20px; /* Espacio entre la imagen y los detalles */
+    align-items: flex-start; /* Alinear los elementos en la parte superior */
+}
+
+.modal-imagen {
+    flex-basis: 50%; /* Ocupa la mitad del ancho para la imagen */
+    max-width: 50%; /* Evita que la imagen crezca demasiado */
+}
+
+.modal-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+.modal-detalles {
+    flex-basis: 50%; /* Ocupa la mitad del ancho para los detalles */
+}
+
+.modal-detalles h3 {
+    margin-top: 0;
+    font-size:xx-large;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    color: #333; /* Añadido color de texto */
+}
+
+.modal-detalles .descripcion-producto {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.modal-detalles .modal-acciones {
+    margin-top: 15px;
+    text-align: center; /* Centra el botón de "Agregar al carrito" */
+}
+
+.modal-detalles .modal-acciones button.agregaralcarrito-modal {
+    padding: 10px 20px;
+    background-color: #c19629;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.modal-detalles .modal-acciones button.agregaralcarrito-modal:hover {
+    background-color: #a88422;
+}
+
+/* Estilos para el botón de cerrar */
+.modal-vista-rapida .cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #555;
+    z-index: 1001; 
+}
+
+.modal-vista-rapida .cerrar-modal:hover {
+    color: #000;
+}
+
+/* Estilos responsivos para la modal (adaptación para pantallas más pequeñas) */
+@media (max-width: 768px) {
+    .modal-contenido {
+        flex-direction: column; /* Apilar imagen y detalles en pantallas más pequeñas */
+        align-items: center;
+    }
+
+    .modal-imagen {
+        max-width: 40%;
+    }
+
+    .modal-detalles {
+        flex-basis: auto; /* Los detalles ocupan el espacio restante */
+    }
+
+}
+
+.barra-busqueda {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro */
+    justify-content: center; /* Centra horizontalmente la barra de búsqueda */
+    margin-bottom: 30px; /* Espacio debajo de la barra de búsqueda */
+    margin-top: 30px;
+    padding: 10px; /* Un poco de espacio interno */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente transparente para integrarse con el fondo oscuro */
+    border-radius: 5px;
+    border: 1px solid rgba(27, 27, 27, 0.178); /* Borde sutil */
+    max-width: 700px; /* Ancho máximo para que no sea demasiado grande */
+    margin-left: auto;
+    margin-right: auto; /* Centrado horizontal usando márgenes automáticos */
+}
+
+.barra-busqueda input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+    color: #000000; /* Texto claro */
+    background-color: #c196294a; /* Fondo oscuro para el input */
+}
+
+.barra-busqueda input[type="text"]::placeholder {
+    color: #939191; /* Color del placeholder más claro */
+}
+
+.barra-busqueda button {
+    background-color: #c19629; /* Color dorado principal */
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 10%;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.barra-busqueda button:hover {
+    background-color: #a88422; /* Tono dorado más oscuro al pasar el ratón */
+}
+
+.barra-busqueda button i {
+    margin-right: 0; /* Asegura que el icono esté pegado al texto (si lo hubiera) */
+}
+
+/* Estilos responsivos (opcional, para pantallas más pequeñas) */
+@media (max-width: 600px) {
+    .barra-busqueda {
+        max-width: 95%;
+    }
+
+    .barra-busqueda input[type="text"] {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .barra-busqueda button {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+}

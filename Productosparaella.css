@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 80px;
+    color: rgb(219, 218, 218);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.CarritoNav img {
+    cursor: pointer;
+    height: 27px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.CarritoNav img:hover {
+    transform: scale(1.2);
+}
+
+.seccionPrincipal {
+    min-height: 20vh;
+    /* Altura mínima para asegurar que se vea la imagen en pantallas pequeñas */
+    display: flex;
+    justify-content: center;
+    /* Centrar el contenido horizontalmente */
+}
+
+.header {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(Contenido/LauProductos/FondoPerfumes3.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 70vh;
+    align-items: center;
+    text-align: center;
+}
+
+.header p {
+    font-size: 16px;
+    color: aliceblue;
+    padding: 0 250;
+    margin-bottom: 25px;
+}
+
+.exploraesencias {
+    text-align: center;
+    background-color: #fff;
+    padding: 60px 20px;
+    color: #333;
+}
+
+.esencias h2 {
+    font-size: 2.5em;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.esencias p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.esenciasfotos {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.esencias3 {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.esencias3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.esencias3 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.esencias3 h3 {
+    font-size: 1.6em;
+    color: #000;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #e0b300;
+    /* Dorado */
+}
+
+.esencias3 p {
+    font-size: 1.1em;
+    color: #444;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Espaciado uniforme entre productos */
+    padding: 20px;
+}
+
+.seccionperfumes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    /* Ancho máximo */
+    margin: 0 auto;
+    /* Centrado automático */
+    padding: 0 30px;
+    /* Agrega un pequeño padding en los costados */
+}
+
+.tarjetaperfumes {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Sombra agregada */
+    overflow: hidden;
+    width: 350px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-grow: 1;
+    /* Esto permite que las tarjetas se expandan si es necesario */
+    max-width: 500px;
+    /* max-width para limitar el tamaño */
+
+}
+
+.tarjetaperfumes:hover {
+    transform: translateY(-20px);
+}
+
+.tarjetaperfumes img {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Ajusta la imagen sin distorsionarla */
+    height: 200px;
+    width: auto;
+}
+
+.Precio {
+    font-size: 1.1em;
+    color: #b08d2c;
+    font-weight: bold;
+}
+
+.cart-section {
+    background: #b68b1f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin-top: auto;
+    border-radius: 0; /* Bordes cuadrados */
+    
+}
+
+.cart-section .agregaralcarrito {
+    border-left: .1rem solid #fff7;
+    border-right: .1rem solid #fff7;
+    width: 100%;
+}
+
+
+
+/* Botón "Add to Cart" */
+.agregaralcarrito {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Cambia el color del botón al pasar el cursor */
+.agregaralcarrito:hover {
+    background: white;
+    color: #875223;
+}
+
+
+.tarjetaperfumes:hover .Precio {
+    transform: translateY(-50px);
+}
+
+h2 {
+    color: #8e511c;
+}
+
+.floralesfondo {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(Contenido/LauProductos/FloralesSeccionNueva.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+    line-height: 80px;
+    color: rgb(253, 253, 253);
+    font-size: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.frutalesfondo {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(Contenido/LauProductos/FrutalesFondo.avif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+    line-height: 80px;
+    color: rgb(253, 253, 253);
+    font-size: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.OrientalesFondo {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(Contenido/LauProductos/Orientalesfondo3jpg.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+    line-height: 80px;
+    color: rgb(253, 253, 253);
+    font-size: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.GourmandFondo2 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(Contenido/LauProductos/GourmandFondo3.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+    line-height: 80px;
+    color: rgb(253, 253, 253);
+    font-size: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}

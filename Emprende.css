@@ -1,0 +1,797 @@
+* {
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Header {
+    width: 100%;
+    /* El header ocupa todo el ancho */
+    height: auto;
+    /* La altura se ajusta al contenido */
+}
+
+.navbar {
+    background-color: rgb(231, 231, 231, 1);
+    display: flex;
+    border: #000000 2px solid;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    max-width: 800px;
+    position: fixed; /* Cambiamos a fixed para que se quede en su lugar inicial al bajar */
+    top: -20px; /* Mantenemos el top inicial */
+    border-radius: 50px;
+    padding: 8px 15px;
+    margin-top: 50px;
+    z-index: 20;
+    font-weight: 600;
+    transition: transform 0.1s ease-out; /* Agregamos transición para la animación */
+}
+
+
+/* Clase para el navbar fijo */
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%);
+    margin-top: 0;
+}
+
+/* Clase para ocultar el navbar */
+.navbar.oculto {
+    transform: translateY(-100%);
+}
+
+
+.logo {}
+
+.navbar>div>ul {
+    /* Estilo para la lista dentro del div */
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar>div>ul>li {
+    margin: 0 10px;
+    /* Espacio entre los elementos del menú */
+}
+
+.navbar a.bar {
+    color: #000000;
+    padding: 8px 10px;
+    display: block;
+}
+
+.navbar a.bar::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #c19629;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar li.active a {
+    font-weight: bolder;
+}
+
+.navbar li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    /* Altura de la línea */
+    background-color: #c19629;
+    /* Color de la línea */
+    width: 100%;
+    /* Ancho de la línea */
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    /* Espacio entre el texto y la línea */
+    transform: scaleX(0);
+    /* Inicialmente oculta */
+    transition: transform 0.3s ease;
+    /* Transición suave */
+}
+
+.navbar>div>ul>li:hover a.bar::after,
+.navbar>div>ul>li.active a.bar::after {
+    transform: scaleX(1);
+}
+
+.bar {
+    display: inline-block;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease background-color, 0.3s ease color, 0.3s ease transform;
+}
+
+.bar:hover {
+    color: #c19629;
+    transform: scale(1.1);
+}
+
+/**/
+.CarritoNav img {
+    cursor: pointer;
+    height: 27px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.CarritoNav img:hover {
+    transform: scale(1.2);
+}
+
+.seccionPrincipal {
+    width: 100%;
+    min-height: 20vh;
+    /* Altura mínima para asegurar que se vea la imagen en pantallas pequeñas */
+    background-image: url('Contenido/Perfumes/CategoriasFondos/EmprendeFondo.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    /* Centrar el contenido horizontalmente */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 20px;
+    /* Añadir padding general */
+}
+
+.abrir-carrito-btn{
+    border: none;
+}
+.seccionPrincipal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    /* Fondo oscuro semi-transparente */
+}
+
+/* Estilos para el ícono de WhatsApp (Modificado para ser alargado) */
+.Asesoria {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, #42ff0e, #005b05);
+    /* Cambiar el gradiente a horizontal */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    border-radius: 50px;
+    /* Bordes más redondeados para el óvalo */
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 15px;
+    /* Añadir padding horizontal */
+    display: flex;
+    /* Usar flex para alinear icono y texto */
+    align-items: center;
+    /* Alinear verticalmente */
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    /* Eliminar el subrayado del enlace */
+}
+
+.whatsapp-icon img {
+    width: 30px;
+    /* Reducir un poco el tamaño del icono */
+    height: 30px;
+    margin-right: 10px;
+    /* Espacio entre el icono y el texto */
+}
+
+.pppWhatsapp {
+    margin: 0;
+}
+
+.pppWhatsapp a {
+    color: white !important;
+    /* Establecer el color del texto blanco y forzar la aplicación */
+    text-decoration: none;
+    /* Asegurar que no haya subrayado */
+}
+
+.pppWhatsapp p {
+    margin: 0;
+    font-size: 0.9em;
+    /* Ajustar tamaño de la fuente del texto */
+    line-height: 1.2;
+    white-space: nowrap;
+    /* Evitar que el texto se rompa en varias líneas */
+}
+
+.pppWhatsapp h4 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.pppWhatsapp h6 {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+.Asesoria:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Estilos del botón */
+.flechaArriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flechaArriba img {
+    width: 40px;
+    height: 40px;
+}
+
+.flechaArriba:hover {
+    transform: scale(0.95);
+    /* Efecto de escala al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.seccionPrincipal {
+    width: 100%;
+    min-height: 20vh;
+    /* Altura mínima para asegurar que se vea la imagen en pantallas pequeñas */
+    background-image: url('Contenido/Perfumes/CategoriasFondos/EmprendeFondo.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    /* Centrar el contenido horizontalmente */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 20px;
+    /* Añadir padding general */
+}
+
+.seccionPrincipal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    /* Fondo oscuro semi-transparente */
+}
+
+/* Estilo del título */
+h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #000000;
+    margin: 10px;
+    position: relative;
+    /* Para posicionar el pseudo-elemento */
+    display: inline-block;
+    /* Para que el ancho del h2 se ajuste al contenido */
+    padding-bottom: 10px;
+    /* Espacio entre el texto y la línea */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    /* Ajusta el ancho según lo necesites */
+    height: 2px;
+    /* Grosor de la línea */
+    background-color: #c19629;
+    /* Color de la línea */
+    margin: 10px auto;
+    /* Centra la línea debajo del texto */
+    position: absolute;
+    /* Posiciona la línea */
+    left: 50%;
+    /* Posiciona a la mitad */
+    transform: translateX(-50%);
+    /* Centra la línea horizontalmente */
+}
+
+/* Media Query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        /* Cambiar a disposición horizontal */
+        align-items: center;
+        width: 95%;
+        padding: 10px;
+        border-radius: 10px;
+        top: 10px;
+        overflow-x: auto;
+        /* Permitir el desplazamiento horizontal */
+        -webkit-overflow-scrolling: touch;
+        /* Para un desplazamiento suave en iOS */
+        justify-content: flex-start;
+        /* Alinear los elementos al inicio */
+    }
+
+    .Logo {
+        margin-right: 20px;
+        /* Espacio entre el logo y el menú */
+    }
+
+    .navbar>div>ul {
+        display: flex;
+        flex-direction: row;
+        /* Los elementos de la lista en fila */
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar>div>ul>li {
+        margin: 0 15px;
+        /* Espacio entre los elementos del menú */
+    }
+}
+
+    /* Media Query para tablets */
+    @media (min-width: 769px) and (max-width: 1024px) {
+
+        .navbar>div>ul>li {
+            margin: 0 15px;
+        }
+
+        .Logo img {
+            width: 80px;
+        }
+
+    }
+
+    .tiktok-embed {
+        width: 300px;
+        /* Ancho de cada video */
+        height: 500px;
+        /* Altura de cada video */
+    }
+
+    .majorista-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+
+    }
+
+    .majorista-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #000000;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .majorista-section .card {
+        border-radius: 0;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        margin-bottom: 30px;
+    }
+
+    .majorista-section .card:hover {
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .majorista-section .card-body {
+        padding: 40px;
+    }
+
+    .majorista-section .card-title {
+        margin-bottom: 20px;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: x-large;
+    }
+
+    .majorista-section .text-black {
+        color: #000000;
+        font-size: 17px;
+    }
+
+    .majorista-section .text-gold {
+        color: #000000;
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    .majorista-section .btn-outline-gold {
+        color: #0a0a0a;
+        border-color: #d4af37;
+        border-radius: 0;
+        padding: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+    .majorista-section .btn-outline-gold:hover {
+        background-color: #d4af37;
+        color: #fff;
+    }
+
+    .majorista-section .form-control {
+        border-radius: 0;
+        background-color: #f8f9fa;
+        border-color: #ddd;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .majorista-section .form-control:focus {
+        border-color: #d4af37;
+        box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+    }
+
+
+/**/
+   /* Estilos generales del producto */
+/* Estilos generales del producto */
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar los productos */
+}
+
+.producto {
+    position: relative;
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #ccc;
+}
+
+.producto img {
+    width: 100%;
+    display: block;
+}
+
+.boton-carrito {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #eee;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+/* Estilos de las opciones globales */
+.opciones-globales-carrito {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+}
+
+.opciones-globales-carrito h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.opciones-globales-carrito label {
+    margin-bottom: 5px;
+}
+
+.selector-cantidad-global {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.selector-cantidad-global button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 3px;
+}
+
+.selector-cantidad-global input[type="number"] {
+    width: 50px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.precio-producto-global {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.opciones-globales-carrito button.agregar-al-carrito-global {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.opciones-globales-carrito select#color-global {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%; /* Para que ocupe el ancho del contenedor */
+    box-sizing: border-box; /* Para que el padding no aumente el ancho */
+}
+
+.opciones-globales-carrito .cerrar-opciones {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.opciones-globales-carrito .cerrar-opciones:hover {
+    color: #000;
+}
+
+/* Estilos del carrito lateral */
+.carrito-lateral {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    right: -30%;
+    width: 25%;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-left: 1px solid #ccc;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+.carrito-lateral.abierto {
+    right: 0;
+}
+
+.carrito-lateral h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.carrito-items {
+    margin-bottom: 20px;
+}
+
+/*Detalles de los productos, se manejan desde js*/
+.carrito-item {
+    margin-bottom: ;
+    padding: 0px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column; /* Mostrar la información hacia abajo */
+    align-items: flex-start; /* Alinear los elementos a la izquierda */
+}
+
+.carrito-item .item-imagen {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Recortar si la imagen es más grande */
+    border-radius: 5px;
+}
+
+.carrito-item .item-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carrito-item .item-nombre {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.carrito-item .item-detalle {
+    margin-bottom: 3px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.carrito-item .item-precio {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #007bff;
+}
+
+.carrito-item button.eliminar-item {
+    margin-top: 10px;
+    align-self: flex-end; /* Alinear el botón a la derecha */
+}
+
+.carrito-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.carrito-item button:hover {
+    background-color: #c82333;
+}
+
+/**/
+
+
+
+.carrito-lateral .cerrar-carrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.carrito-lateral .cerrar-carrito:hover {
+    color: #000;
+}
+
+    /* Pie de pagina*/
+
+    footer {
+        background-color: #000000;
+        padding: 20px;
+        color: #fff;
+    }
+
+    .alineacion {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .policies-section,
+    .social-icons,
+    .copyright,
+    .contact-section {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    /* Estilos de los íconos de redes sociales */
+    .social-icons {
+        display: grid;
+        gap: 0px;
+    }
+
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+        margin: 0px 25px 40px 5px;
+        transition: 0.3s ease background-color, 0.3s ease color, 0.3s ease transform;
+        transition: background 0.3s ease;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.2);
+    }
+
+    footer h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #ffcc00;
+        /* Color destacado */
+    }
+
+    footer p,
+    ul {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    footer ul,
+    li {
+        margin-bottom: 8px;
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* Estilos de los derechos de autor */
+    .copyright {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        color: #ccc;
+        padding-top: 30px;
+        width: 100%;
+        /* Ocupa todo el ancho */
+        border-top: solid rgba(255, 255, 255, 0.219) 1px;
+        position: relative;
+    }

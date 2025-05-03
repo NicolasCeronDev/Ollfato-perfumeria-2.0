@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="finalizar-compra.css">
+    <link rel="stylesheet" href="General.css">
+</head>
+
+<body>
+    <header class="Header">
+        <div class="seccionPrincipal">
+            <nav class="navbar">
+                <div class="Logo">
+                    <a href="PagPrincipal.html">
+                        <img src="Contenido/Logotipos/LogoSinfondo.png" width="80" alt="Aqui va el Logo">
+                    </a>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="PagPrincipal.html" class="bar">Inicio</a></li>
+                        <li><a href="Productos.html" class="bar">Productos</a></li>
+                        <li><a href="#footer" class="bar">Contacto</a></li>
+                        <li><a href="Emprende.html" class="bar">Emprende </a></li>
+                    </ul>
+                </div>
+
+
+                <div class="CarritoNav">
+                    <button class="abrir-carrito-btn">
+                        <img src="Contenido/Logotipos/carrito-de-compras.png" width="22px">
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="volver-pagina-anterior">
+        <a href="#" id="volverAtras"><- Volver a la página anterior</a>
+    </div>
+    <div class="contenedor-finalizar-compra">
+        <h1>Finalizar Compra</h1>
+        <div class="carrito-final">
+            <h2>Tu Carrito</h2>
+            <div class="carrito-items-final">
+            </div>
+            <p class="total-final">Total: $0</p>
+            
+        </div>
+        <div class="formularios-direccion">
+            <div class="formulario-facturacion">
+                <h2>Detalles de Facturación</h2>
+                <form id="formulario-facturacion">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <textarea id="direccion" name="direccion" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="barrio">Barrio:</label>
+                        <input type="text" id="barrio" name="barrio">
+                    </div>
+                    <div class="form-group">
+                        <label for="notas">Notas Adicionales (Opcional):</label>
+                        <textarea id="notas" name="notas" rows="2"></textarea>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="metodos-pago">
+                <h2>Métodos de Pago</h2>
+                <form id="formulario-pago">
+                    <div class="form-group metodo-seleccion">
+                        <label for="metodo-pago">Selecciona un método de pago:</label>
+                        <select id="metodo-pago" name="metodo-pago" required>
+                            <option value="">-- Seleccionar --</option>
+                            <option value="transferencia">
+                                <div class="opcion-pago">
+                                    <img src="Contenido/iconos/banco.png" alt="Transferencia Bancaria" width="24">
+                                    <span>Transferencia Bancaria</span>
+                                </div>
+                            </option>
+                            <option value="nequi">
+                                <div class="opcion-pago">
+                                    <img src="Contenido/iconos/nequi.png" alt="Nequi" width="24">
+                                    <span>Nequi</span>
+                                </div>
+                            </option>
+                            <option value="daviplata">
+                                <div class="opcion-pago">
+                                    <img src="Contenido/iconos/daviplata.png" alt="Daviplata" width="24">
+                                    <span>Daviplata</span>
+                                </div>
+                            </option>
+                            <option value="tarjeta">
+                                <div class="opcion-pago">
+                                    <img src="Contenido/iconos/tarjeta.png" alt="Tarjeta de Crédito/Débito" width="24">
+                                    <span>Tarjeta de Crédito/Débito</span>
+                                </div>
+                            </option>
+                            <option value="contraentrega">
+                                <div class="opcion-pago">
+                                    <img src="Contenido/iconos/contraentrega.png" alt="Pago Contra Entrega" width="24">
+                                    <span>Pago Contra Entrega (Solo en áreas seleccionadas)</span>
+                                </div>
+                            </option>
+                        </select>
+                    </div>
+                    <div id="detalles-pago">
+                    </div>
+
+                    <div id="detalles-transferencia" class="detalles-metodo" style="display: none;">
+                        <h3>Detalles para Transferencia Bancaria</h3>
+                        <p>Realiza tu pago a la siguiente cuenta:</p>
+                        <div class="form-group">
+                            <label for="banco-transferencia">Banco:</label>
+                            <input type="text" id="banco-transferencia" name="banco_transferencia"
+                                placeholder="Nombre del Banco">
+                        </div>
+                        <div class="form-group">
+                            <label for="numero-cuenta-transferencia">Número de Cuenta:</label>
+                            <input type="text" id="numero-cuenta-transferencia" name="numero_cuenta_transferencia"
+                                placeholder="Número de Cuenta">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo-cuenta-transferencia">Tipo de Cuenta:</label>
+                            <input type="text" id="tipo-cuenta-transferencia" name="tipo_cuenta_transferencia"
+                                placeholder="Ahorros/Corriente">
+                        </div>
+                        <div class="form-group">
+                            <label for="referencia-transferencia">Referencia:</label>
+                            <input type="text" id="referencia-transferencia" name="referencia_transferencia"
+                                placeholder="Tu Nombre o Número de Pedido">
+                        </div>
+                        <p class="nota-importante">Tu pedido se procesará una vez confirmemos el pago.</p>
+                    </div>
+
+                    <div id="detalles-nequi" class="detalles-metodo" style="display: none;">
+                        <h3>Paga con Nequi</h3>
+                        <p>Envía el valor total a la cuenta Nequi:</p>
+                        <div class="form-group">
+                            <label for="numero-nequi">Número de Nequi:</label>
+                            <input type="text" id="numero-nequi" name="numero_nequi" placeholder="Número de Nequi">
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre-nequi">Nombre del titular (opcional):</label>
+                            <input type="text" id="nombre-nequi" name="nombre_nequi" placeholder="Nombre del titular">
+                        </div>
+                        <p class="nota-importante">Por favor, incluye tu nombre o número de pedido en la descripción.
+                        </p>
+                    </div>
+
+                    <div id="detalles-daviplata" class="detalles-metodo" style="display: none;">
+                        <h3>Paga con Daviplata</h3>
+                        <p>Realiza la transferencia a la cuenta Daviplata:</p>
+                        <div class="form-group">
+                            <label for="numero-daviplata">Número de Daviplata:</label>
+                            <input type="text" id="numero-daviplata" name="numero_daviplata"
+                                placeholder="Número de Daviplata">
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre-daviplata">Nombre del titular (opcional):</label>
+                            <input type="text" id="nombre-daviplata" name="nombre_daviplata"
+                                placeholder="Nombre del titular">
+                        </div>
+                        <p class="nota-importante">Asegúrate de ingresar el valor exacto de tu compra.</p>
+                    </div>
+
+                    <div id="detalles-tarjeta" class="detalles-metodo" style="display: none;">
+                        <h3>Paga con Tarjeta de Crédito/Débito</h3>
+                        <div class="form-group">
+                            <label for="numero-tarjeta">Número de Tarjeta:</label>
+                            <input type="text" id="numero-tarjeta" name="numero_tarjeta"
+                                placeholder="**** **** **** ****">
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha-expiracion">Fecha de Expiración (MM/AA):</label>
+                            <input type="text" id="fecha-expiracion" name="fecha_expiracion" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">Código de Seguridad (CVC):</label>
+                            <input type="text" id="cvc" name="cvc" placeholder="CVC">
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre-titular-tarjeta">Nombre del Titular:</label>
+                            <input type="text" id="nombre-titular-tarjeta" name="nombre_titular_tarjeta"
+                                placeholder="Como aparece en la tarjeta">
+                        </div>
+                    </div>
+
+                    <div id="detalles-contraentrega" class="detalles-metodo" style="display: none;">
+                        <h3>Pago Contra Entrega</h3>
+                        <p>Paga en efectivo al momento de recibir tu pedido.</p>
+                        <p class="nota-importante">Este método solo está disponible en áreas de cobertura específicas.
+                            Nos pondremos en contacto para confirmar la entrega.</p>
+                        <p>Por favor, asegúrate de tener el monto exacto al momento de la entrega.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <button type="submit">Realizar Pedido</button>
+
+        <div id="modal-pedido-exito" class="modal" style="display: none;">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h2>¡Pedido Recibido!</h2>
+                <p>Tu pedido ha sido procesado exitosamente.</p>
+                <p>En breve recibirás un correo electrónico con los detalles de tu compra y el número de seguimiento.
+                </p>
+                <p>¡Gracias por tu compra!</p>
+                <button id="boton-ir-a-inicio">Ir a la página principal</button>
+            </div>
+        </div>
+    </div>
+    <!-- footer-->
+    <footer id="footer">
+        <div class="alineacion">
+            <!-- Sección de contacto -->
+            <div class="contact-section">
+                <h3>Contáctanos</h3>
+                <p>📍 Neiva, Colombia</p>
+                <p>📱 WhatsApp: <a href="https://wa.me/573162385351">+57 (316) 4238 5351</a></p>
+                <p>📧 Email: <a href="mailto:ventas@prosportcolombia.com">Olfato@PerfumeriaColombia.com</a></p>
+            </div>
+            <div class="social-icons">
+                <div>
+                    <h3>Síguenos</h3>
+                </div>
+                <div>
+                    <a href="https://www.tiktok.com/@olfato.perfumeria" target="_blank"><img
+                            src="Contenido/Logotipos/tik-tok.png" alt="Logo de Tik-tok"></a>
+                    <a href="" target="_blank"><img src="Contenido/Logotipos/facebook.png" alt="Logo de facebook"></a>
+                    <a href="https://www.instagram.com/olfato.perfumeria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank"><img src="Contenido/Logotipos/instagram.png" alt="Logo de instagram"></a>
+                </div>
+            </div>
+            <!-- Sección de políticas -->
+            <div class="policies-section">
+                <h3>Políticas del sitio</h3>
+                <ul>
+                    <li><a href="#">Términos & Condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Olfato Perfumería. Todos los derechos reservados. Descubre la elegancia en cada
+            fragancia.
+        </div>
+    </footer>
+
+    <script src="finalizar-compra.js"></script>
+    <script src="scroll-navbar.js"></script>
+    <script src="Carrito.js"></script>
+
+</body>
+
+</html>

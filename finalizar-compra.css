@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #735814;
+}
+
+h2 {
+    color: #333232;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.navbar {
+    background-color: rgb(231, 231, 231, 1);
+    display: flex;
+    border: #000000 2px solid;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    max-width: 800px;
+    position: fixed;
+    /* Cambiamos a fixed para que se quede en su lugar inicial al bajar */
+    top: -20px;
+    /* Mantenemos el top inicial */
+    border-radius: 50px;
+    padding: 8px 15px;
+    margin-top: 50px;
+    z-index: 20;
+    font-weight: 600;
+    transition: transform 0.1s ease-out;
+    /* Agregamos transición para la animación */
+}
+
+
+/* Clase para el navbar fijo */
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%);
+    margin-top: 0;
+}
+
+/* Clase para ocultar el navbar */
+.navbar.oculto {
+    transform: translateY(-100%);
+}
+
+
+.logo {}
+
+.navbar>div>ul {
+    /* Estilo para la lista dentro del div */
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar>div>ul>li {
+    margin: 0 10px;
+    /* Espacio entre los elementos del menú */
+}
+
+.navbar a.bar {
+    color: #000000;
+    padding: 8px 10px;
+    display: block;
+}
+
+.navbar a.bar::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #c19629;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar li.active a {
+    font-weight: bolder;
+}
+
+.navbar li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    /* Altura de la línea */
+    background-color: #c19629;
+    /* Color de la línea */
+    width: 100%;
+    /* Ancho de la línea */
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    /* Espacio entre el texto y la línea */
+    transform: scaleX(0);
+    /* Inicialmente oculta */
+    transition: transform 0.3s ease;
+    /* Transición suave */
+}
+
+.navbar>div>ul>li:hover a.bar::after,
+.navbar>div>ul>li.active a.bar::after {
+    transform: scaleX(1);
+}
+
+.bar {
+    display: inline-block;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease background-color, 0.3s ease color, 0.3s ease transform;
+}
+
+.bar:hover {
+    color: #c19629;
+    transform: scale(1.1);
+}
+
+/**/
+.CarritoNav img {
+    cursor: pointer;
+    height: 27px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.CarritoNav img:hover {
+    transform: scale(1.2);
+}
+
+.seccionPrincipal {
+    width: 100%;
+    min-height: 20vh;
+    /* Altura mínima para asegurar que se vea la imagen en pantallas pequeñas */
+    background-image: url('Contenido/Perfumes/CategoriasFondos/EmprendeFondo.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    /* Centrar el contenido horizontalmente */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 20px;
+    /* Añadir padding general */
+}
+
+.abrir-carrito-btn {
+    border: none;
+}
+
+.seccionPrincipal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    /* Fondo oscuro semi-transparente */
+}
+
+/*---------------------------------------------------*/
+.formularios-direccion {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* Colocar elementos en fila */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contenedor-finalizar-compra {
+    align-items: center;
+    padding: 20px;
+    margin-top: 10vh;
+    margin-bottom: 40px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carrito-final {
+    max-width: 460px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carrito-final,
+.formulario-facturacion .metodos-pago {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.carrito-final h2,
+.formulario-facturacion h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.item-final {
+    display: flex;
+    justify-content: center;
+    /* Centramos horizontalmente todo el contenido del item */
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c3c0c0;
+}
+
+.item-imagen-final {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    /* Añadimos espacio entre la imagen y el texto */
+    margin-right: 40px;
+}
+
+.item-imagen-final img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+.item-nombre-final {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-detalle-final {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.item-precio-final {
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 5px;
+}
+
+.formulario-facturacion {
+    margin-top: 20px;
+    width: 40%;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #adacab;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.total-final {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.volver-pagina-anterior {
+    margin: 5vh 0 -5vh 0;
+}
+
+#volverAtras{
+    color: #c2941f;
+}
+
+#volverAtras:hover{
+    color: rgb(0, 0, 0);
+}
+/* Estilos de los métodos de pago */
+
+.metodos-pago {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.metodos-pago h2 {
+    text-align: left;
+    /* Alinear el título a la izquierda */
+    margin-bottom: 20px;
+}
+
+.metodo-seleccion label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.metodo-seleccion select#metodo-pago {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%23555%22%20viewBox%3D%220%200%2025%2013%22%3E%3Cpath%20d%3DM12.5%2013l12-13H.5z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    padding-right: 35px;
+}
+
+.opcion-pago {
+    display: flex;
+    align-items: center;
+}
+
+.opcion-pago img {
+    margin-right: 10px;
+}
+
+#detalles-pago {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 0.95em;
+    color: #666;
+    display: none;
+    /* Ocultar inicialmente el div de detalles dinámicos */
+}
+
+.detalles-metodo {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.detalles-metodo h3 {
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.nota-importante {
+    font-size: 0.9em;
+    color: #dc3545;
+    /* Rojo para destacar */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Estilo del botón de realizar pedido */
+button[type="submit"] {
+    background-color: #28a745;
+    /* Color verde para acción positiva */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    width: 100%;
+    /* Ancho completo para el botón */
+    max-width: 300px;
+    /* Ancho máximo del botón */
+    align-self: center;
+    /* Centrar el botón */
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Estilos para mensajes de error o éxito (opcional) */
+.mensaje-error {
+    color: red;
+    margin-top: 10px;
+}
+
+.mensaje-exito {
+    color: green;
+    margin-top: 10px;
+}
+
+.mensaje-exito-temporal {
+    background-color: #e6ffe6;
+    color: #28a745;
+    border: 1px solid #b3e6b3;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    /* Se mantiene en su lugar */
+    z-index: 1;
+    /* Sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Ancho completo */
+    height: 100%;
+    /* Altura completa */
+    overflow: auto;
+    /* Habilitar scroll si el contenido es largo */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo oscuro con transparencia */
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* Centrar vertical y horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Ajustar ancho según necesites */
+    border-radius: 8px;
+    position: relative;
+}
+
+.cerrar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#boton-ir-a-inicio {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+#boton-ir-a-inicio:hover {
+    background-color: #0056b3;
+}

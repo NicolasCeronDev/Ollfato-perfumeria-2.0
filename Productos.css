@@ -1,0 +1,620 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/**/
+.CarritoNav img {
+    cursor: pointer;
+    height: 27px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.CarritoNav img:hover {
+    transform: scale(1.2);
+}
+
+.seccionPrincipal {
+    width: 100%;
+    min-height: 50vh;
+    /* Altura mínima para asegurar que se vea la imagen en pantallas pequeñas */
+    background-image: url('Contenido/Perfumes/CategoriasFondos/FondoProductos.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    /* Centrar el contenido horizontalmente */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 20px;
+    /* Añadir padding general */
+}
+
+.seccionPrincipal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    /* Fondo oscuro semi-transparente */
+}
+
+.Titulo_1 {
+    text-shadow: 4px 3px 2px black;
+    padding: 0 20px;
+    width: 100%;
+    text-align-last: center;
+    margin-top: 40px;
+    color: white;
+    font-size: 2em;
+    /* Ajustar tamaño de fuente */
+    position: relative;
+    z-index: 2;
+    /* Coloca el texto sobre el fondo oscuro */
+}
+
+.texto_1 {
+    text-shadow: 4px 3px 2px black;
+    margin: 30px 20px;
+    color: white;
+    font-size: 1em;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    /* Coloca el texto sobre el fondo oscuro */
+}
+
+.Botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    /* Coloca el texto sobre el fondo oscuro */
+    flex-wrap: wrap;
+    /* Permitir que los botones se envuelvan en pantallas pequeñas */
+    padding: 0 20px;
+    /* Añadir padding horizontal */
+}
+
+.btn {
+    margin-top: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primero {
+    background: linear-gradient(45deg, #424242, #181818);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primero:hover {
+    background: linear-gradient(45deg, #4f400c, #81641b);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 2);
+    transform: scale(1.08);
+}
+
+.btn-segundo {
+    background: linear-gradient(45deg, #ffffff, #898888);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    color: #000000;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-segundo:hover {
+    background: linear-gradient(45deg, #5e4d0e, #c19629);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+    transform: scale(1.08);
+}
+
+
+
+/* Media Query para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Titulo_1 {
+        font-size: 2.2em;
+    }
+
+    .texto_1 {
+        font-size: 1em;
+        margin: 30px;
+    }
+
+    .navbar>div>ul>li {
+        margin: 0 15px;
+    }
+
+    .Logo img {
+        width: 80px;
+    }
+
+}
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .Asesoria {
+        padding: 8px 12px;
+        /* Reducir el padding en móviles */
+        border-radius: 30px;
+        /* Hacerlo menos ovalado en móviles */
+    }
+
+    .whatsapp-icon img {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+
+    .pppWhatsapp p {
+        font-size: 0.8em;
+    }
+
+    .pppWhatsapp h4 {
+        font-size: 0.9em;
+    }
+
+    .pppWhatsapp h6 {
+        font-size: 0.7em;
+    }
+}
+
+/*Link de volver...*/
+
+.volver {
+    text-align: left;
+    /* Alinea el botón a la izquierda */
+    padding: 20px;
+    background-image: linear-gradient(rgb(37, 37, 37),
+            #0000006c),
+        url(Contenido);
+    box-shadow: 0 -18px 19px 1px rgba(0, 0, 0, 0.9);
+
+}
+
+.linkVolver {
+    display: inline-block;
+    background: linear-gradient(45deg, #dfdfdf, #c2c683);
+    /* Color de fondo */
+    color: #000000;
+    /* Color del texto */
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    /* Quita el subrayado del enlace */
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    /* Sombra suave */
+}
+
+.linkVolver:hover {
+    background: linear-gradient(45deg, #766118, #d7a82f);
+    /* Cambia el color al pasar el mouse */
+    transform: translateY(-3px);
+    /* Efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Sombra más pronunciada */
+
+}
+
+/* Seccion ¿Que estas buscando? */
+#Categorias {
+    box-sizing: border-box;
+    box-shadow: 0 -1px 19px 1px rgb(144, 141, 141);
+
+}
+
+.banner {
+    background: linear-gradient(#646464b3, #e8e8ed);
+    background-size: cover;
+    color: #f8eeee;
+    text-align: center;
+    padding: 40px 20px; /* Reducir padding vertical y horizontal */
+    width: 100%;
+}
+
+.banner h1 {
+    font-size: 2em; /* Reducir tamaño de fuente */
+    padding-bottom: 5vh; /* Reducir padding inferior */
+    text-shadow: 2px 2px 1px black; /* Reducir sombra */
+    color: #ffffff;
+}
+
+.banner button {
+    color: #ffffff;
+    background-color: #101010;
+    border: none;
+    padding: 8px 15px; /* Reducir padding del botón */
+    margin: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 75%; /* Ajustar posición vertical */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar para centrado exacto */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); /* Reducir sombra */
+    font-size: 0.9em; /* Reducir tamaño de fuente del botón */
+}
+
+/* Categorias ¿que estas buscando? */
+.contCategoria {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Reducir el espacio entre categorías */
+    flex-wrap: wrap;
+    margin: 20px; /* Reducir márgenes */
+}
+
+.categoria {
+    position: relative;
+    flex-wrap: wrap;
+    padding: 20px; /* Reducir el padding interno */
+    width: calc(50% - 15px); /* Dos categorías por fila en pantallas medianas */
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.279);
+    flex: 1;
+    transition: .3s all ease;
+    min-width: 150px; /* Añadir un ancho mínimo */
+}
+
+.categoria:hover {
+    flex: 1.2; /* Reducir el factor de crecimiento en hover */
+    background: hsl(39, 77%, 83%);
+}
+
+.imgCategorias {
+    width: 100%;
+    height: auto; /* Ajustar altura automáticamente */
+    aspect-ratio: 16 / 9; /* Mantener una proporción */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Reducir margen inferior */
+    transition: transform 0.3s ease; /* Añadir transición al hover de la imagen */
+}
+
+.imgCategorias:hover {
+    transform: scale(1.05); /* Pequeño efecto de zoom al hover */
+}
+
+/* Media Query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .banner {
+        padding: 30px 15px;
+    }
+
+    .banner h1 {
+        font-size: 1.6em;
+        padding-bottom: 3vh;
+    }
+
+    .banner button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+        top: 85%;
+    }
+
+    .contCategoria {
+        margin: 10px;
+        gap: 10px;
+    }
+
+    .categoria {
+        width: 95%; /* Una categoría por fila en móviles */
+        padding: 15px;
+    }
+
+    .imgCategorias {
+        height: auto; /* Ajustar altura automáticamente */
+        aspect-ratio: 16 / 9;
+        margin-bottom: 10px;
+    }
+}
+
+/* Media Query para tablets (opcional) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .banner {
+        padding: 60px 80px;
+    }
+
+    .banner h1 {
+        font-size: 2.2em;
+        padding-bottom: 8vh;
+    }
+
+    .contCategoria {
+        margin: 30px;
+        gap: 20px;
+    }
+
+    .categoria {
+        width: calc(33% - 20px); /* Tres categorías por fila en tablets */
+    }
+}
+
+/*seccionMasVendidosyNuevosLanzamientos*/
+.seccionMasVendidosyNuevosLanzamientos {
+    background-color: #e8e8ed;
+    padding: 40px;
+    text-align: center;
+    padding: 5vh 0px 20vh 0px;
+
+}
+
+/*seccionMasVendidosyNuevosLanzamientos*/
+.seccionMasVendidosyNuevosLanzamientos2 {
+    box-shadow:
+        0 -10px 1px rgba(146, 146, 146, 0.052);
+        
+    padding: 5vh 0px 15vh 0px;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.New {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.New img {
+    margin-right: 5vh;
+    padding: 10px;
+    width: 90px;
+    height: 90px;
+    transform: rotate(-15deg);
+    /* Rota la imagen 15 grados hacia la izquierda */
+
+    animation: girarYEscalar 3s ease-in-out 3;
+    /* Aplica la animación */
+}
+
+@keyframes girarYEscalar {
+    0% {
+        transform: rotate(-14deg) scale(1);
+        /* Inicia sin rotación y tamaño normal */
+    }
+
+    50% {
+        transform: rotate(360deg) scale(1.5);
+        /* Gira 180 grados y crece */
+    }
+
+    100% {
+        transform: rotate(-14deg) scale(1);
+        /* Vuelve a la posición inicial y tamaño normal */
+    }
+}
+
+.seccionMasVendidosyNuevosLanzamientos h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #000000;
+    text-shadow: 3px 1.5px 3px rgb(143, 139, 139);
+
+}
+
+.seccionMasVendidosyNuevosLanzamientos2 h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #000000;
+    text-shadow: 3px 1.5px 3px rgb(143, 139, 139);
+}
+
+.contenedor-slide {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1px;
+    padding: 10px;
+    margin-right: 20vh;
+    margin-left: 20vh;
+}
+
+h3,
+p,
+button {
+    margin: 10px 0;
+    /* Espacio entre elementos */
+}
+
+.producto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    scroll-snap-align: start;
+    flex: 0 0 250px;
+    margin: 15px;
+    box-shadow: 0 0 4px 1px #c19629;
+    border-radius: 5px;
+    transition: transform .3s all ease;
+
+}
+
+.producto:hover {
+    background: hsl(0, 0%, 100%);
+    transform: scale(1.03);
+}
+
+
+.producto img {
+    max-width: 100%;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Ajusta la imagen sin distorsionarla */
+    border-radius: 10px;
+    /* Bordes redondeados (opcional) */
+    height: 200px;
+    /* Altura fija para todas las imágenes */
+    margin-right: 20px;
+}
+
+.producto2 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0 0 4px 1px #c19629;
+    border-radius: 5px;
+    width: 20%;
+    transition: transform .3s all ease;
+    margin: 15px;
+    width: auto;
+}
+
+.producto2:hover {
+    background: hsl(0, 0%, 100%);
+    transform: scale(1.03);
+}
+
+.producto h3{
+    color: #7c6825;
+    padding: 20px;
+}
+
+.producto2 img {
+    max-width: 100%;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Ajusta la imagen sin distorsionarla */
+    border-radius: 10px;
+    /* Bordes redondeados (opcional) */
+    height: 300px;
+    /* Altura fija para todas las imágenes */
+    width: auto;
+}
+
+#NuestrasOfertas {
+    background-image: url(Contenido/Perfumes/CategoriasFondos/ofertaFondo.jpg);
+    background-attachment: fixed;
+    box-shadow: 0 -10px 10px rgb(243, 237, 125);    /* Sombra arriba */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-bottom: 5vh; /* Reducir padding inferior */
+    padding-top: 30px; /* Añadir padding superior */
+    padding-left: 10px; /* Añade un poco de padding lateral */
+    padding-right: 10px; /* Añade un poco de padding lateral */
+}
+
+#NuestrasOfertas h2 {
+    font-size: 2.0em; /* Reduce un poco el tamaño del título en general */
+    padding-bottom: 2vh; /* Reduce el padding inferior del título */
+    margin-bottom: 5vh; /* Reduce el margen inferior del título */
+    color: #000000;
+    text-shadow: 3px 1.5px 3px rgb(143, 139, 139);
+    border-bottom: solid 4px #d7a72fd1;
+    border-bottom-left-radius: 70%;
+    border-bottom-right-radius: 70%;
+
+}
+
+.lista-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 5vh; /* Reduce el margen inferior de la lista */
+    padding-left: 10px; /* Añade un poco de padding lateral a la lista */
+    padding-right: 10px; /* Añade un poco de padding lateral a la lista */
+
+}
+
+.oferta-contenedor {
+    position: relative;
+    /* Establece el contexto de posicionamiento para el icono */
+    /* O el tipo de display que estés usando para tus ofertas */
+    /* Otras propiedades de estilo para el contenedor si las tienes */
+}
+
+.icono-descuento {
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    background-color: #ff9800;
+    /* Naranja brillante */
+    color: white;
+    font-size: 1.4em;
+    /* Más grande */
+    font-weight: 900;
+    /* Más grueso */
+    padding: 10px 15px;
+    border-radius: 8px;
+    /* Más redondeado */
+    text-align: center;
+    z-index: 10;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+    /* Sombra más pronunciada */
+    animation: pulso 1.3s infinite alternate;
+    /* Animación de pulso */
+}
+
+@keyframes pulso {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.95;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.icono-descuento span {
+    display: block;
+    /* Hace que cada span ocupe una línea */
+}
+
+/* Media query para pantallas más pequeñas (ej. móviles) */
+@media (max-width: 768px) {
+    .lista-productos {
+        flex-direction: column; /* Los productos se apilan verticalmente */
+        align-items: center; /* Centra los productos horizontalmente */
+    }
+
+    .producto {
+        flex-basis: calc(100% - 20px); /* Ocupa todo el ancho en pantallas pequeñas */
+        margin: 10px;
+    }
+
+    .producto2 {
+        flex-basis: calc(100% - 20px); /* Ocupa todo el ancho en pantallas pequeñas */
+        margin: 10px;
+    }
+
+    #NuestrasOfertas h2 {
+        font-size: 1.8em; /* Reduce aún más el tamaño del título en móviles */
+        margin-bottom: 3vh;
+    }
+}
+
+/*ocultamos barra de busqueda para que no dañe el comportamiento del carrito*/
+.ocultar-barra{
+    position: fixed;
+}
+
+
