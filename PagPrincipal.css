@@ -23,7 +23,7 @@ body {
 
 .seccionPrincipal {
     width: 100%;
-    min-height: 50vh;
+    min-height: 80vh;
     /* Altura mínima para asegurar que se vea la imagen en pantallas pequeñas */
     background-image: url('Contenido/Perfumes/CategoriasFondos/FondoProductos.jpg');
     background-attachment: fixed;

@@ -14,14 +14,14 @@
         <div class="seccionPrincipal">
             <nav class="navbar">
                 <div class="Logo">
-                    <a href="PagPrincipal.html">
+                    <a href="Index.html">
                         <img src="Contenido/Logotipos/LogoSinfondo.png" width="80" alt="Aqui va el Logo">
                     </a>
                 </div>
                 <div>
                     <ul>
-                        <li><a href="PagPrincipal.html" class="bar">Inicio</a></li>
-                        <li><a href="Productos.html" class="bar">Productos</a></li>
+                        <li><a href="Index.html" class="bar">Inicio</a></li>
+                        <li><a href="Productos.php" class="bar">Productos</a></li>
                         <li><a href="#footer" class="bar">Contacto</a></li>
                         <li><a href="Emprende.html" class="bar">Emprende </a></li>
                     </ul>

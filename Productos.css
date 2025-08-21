@@ -528,15 +528,16 @@ button {
 }
 
 .lista-productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 10vh;
     margin-bottom: 5vh; /* Reduce el margen inferior de la lista */
-    padding-left: 10px; /* Añade un poco de padding lateral a la lista */
-    padding-right: 10px; /* Añade un poco de padding lateral a la lista */
-
+    padding-left: 20px; /* Añade un poco de padding lateral a la lista */
+    padding-right: 20px; /* Añade un poco de padding lateral a la lista */
+    margin: 0 10%;
 }
-
+       
 .oferta-contenedor {
     position: relative;
     /* Establece el contexto de posicionamiento para el icono */

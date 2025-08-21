@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Finalizar compra
         finalizarCompraBtn.addEventListener('click', () => {
             guardarCarrito();
-            window.location.href = 'finalizar-compra.html';
+            window.location.href = 'finalizar-compra.php';
         });
 
         // --- Event Listeners de Búsqueda  ---
