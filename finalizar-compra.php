@@ -14,14 +14,23 @@
         <div class="seccionPrincipal">
             <nav class="navbar">
                 <div class="Logo">
+<<<<<<< HEAD:finalizar-compra.php
                     <a href="Index.html">
+=======
+                    <a href="index.html">
+>>>>>>> 6b1bf43c923c25f6ed5abdcb2e8011225acd1482:finalizar-compra.html
                         <img src="Contenido/Logotipos/LogoSinfondo.png" width="80" alt="Aqui va el Logo">
                     </a>
                 </div>
                 <div>
                     <ul>
+<<<<<<< HEAD:finalizar-compra.php
                         <li><a href="Index.html" class="bar">Inicio</a></li>
                         <li><a href="Productos.php" class="bar">Productos</a></li>
+=======
+                        <li><a href="index.html" class="bar">Inicio</a></li>
+                        <li><a href="Productos.html" class="bar">Productos</a></li>
+>>>>>>> 6b1bf43c923c25f6ed5abdcb2e8011225acd1482:finalizar-compra.html
                         <li><a href="#footer" class="bar">Contacto</a></li>
                         <li><a href="Emprende.html" class="bar">Emprende </a></li>
                     </ul>
