@@ -2,4 +2,3 @@
 
   - Status: The website is still under construction.
 
-<h2>Front del sitio...</h2>
